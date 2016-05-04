@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>EZoApp</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: filesystem:">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.2/normalize.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="https://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+  <!-- Export CSS  -->
+  <style>
+    #pic {
+    max-width: 100%;
+    height: auto;
+    }
+#map{
+  max-width:70%;
+  float:left;
+  height: auto;
+}
+#mark1{
+  float:left;
+
+}
+fieldset{
+	border:none;
+	padding:0;
+	margin:0;
+}
+label{
+	display:inline-block;
+	padding-bottom:10px;
+	width:90px;
+}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Uncomment the following to include cordova in your app project -->
+  <!-- <script src="//ezoui.com/platforms/android_or_ios/cordova.js"></script> -->
+  <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <!-- Export JS  -->
+  <script>
+    $(document).on("pagecreate", "#pageone", function () {
+      $("picture").on("swipe",
+        function () {
+          $("#pic2").attr("srcset",
+            "http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg");
+        });
+      $("picture").on("click",
+        function () {
+          $("#headpic").hide();
+          $("#show").show();
+        });
+    });
+
+
+    $(function () {
+      $("#dialog").dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "blind",
+          duration: 1000
+        }
+
+      });
+
+      $("#mark1").click(function () {
+        $("#dialog").dialog("open");
+
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Page: pageone  -->
+  <div data-role="page" id="pageone">
+    <div id="headpic">
+      <picture>
+        <source id="pic2" srcset="http://ichef-1.bbci.co.uk/news/976/media/images/83351000/jpg/_83351965_explorer273lincolnshirewoldssouthpicturebynicholassilkstone.jpg">
+          <img id="pic" sre="http://ichef-1.bbci.co.uk/news/976/media/images/83351000/jpg/_83351965_explorer273lincolnshirewoldssouthpicturebynicholassilkstone.jpg">
+      </picture>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div id="show" style="display:none">
+        點擊獲得資訊
+        <img id="mark1" src="http://www.easyicon.net/api/resizeApi.php?id=1183485&amp;size=24">
+        <div id="dialog" title="test dialog">
+          <p>just for test</p>
+        </div>
+        <picture>
+          <source id="map2" srcset="http://www.thevffvthe.com/wp-content/uploads/2013/02/140507_%E8%88%9E%E8%94%AC%E5%B0%8F%E5%9C%B0%E5%9C%96-03.jpg">
+            <img id="map" sre="http://www.thevffvthe.com/wp-content/uploads/2013/02/140507_%E8%88%9E%E8%94%AC%E5%B0%8F%E5%9C%B0%E5%9C%96-03.jpg">
+        </picture>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
